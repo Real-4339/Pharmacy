@@ -18,15 +18,13 @@ public class Program {
         ArrayList<User> people = new ArrayList<User>();
         sql.User_out(people);
 
-
-        for (int i = 0; i < people.size(); i++) {
-            Dana.Hello(people.get(i));
-        }
-
-
-        int idCount = Dana.PrintProducts(polka);
-        Dana.Scan(people.get(0), polka, idCount);
-
+      while(true) {
+          for (int i = 0; i < people.size(); i++) {
+              Dana.Hello(people.get(i));
+              int idCount = Dana.PrintProducts(polka);
+              Dana.Scan(people.get(i), polka, idCount);
+          }
+      }
     }
 }
 
