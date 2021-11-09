@@ -9,12 +9,15 @@ public class Steroids extends Product {
     public String getType(){return type;}
     private void setType(String Type){ type = Type;}
 
-    public Steroids (String name, String manufacturer, String country_manufacturer, double price, String type) {
-        super(); // я не понимаю, зачем он тут нужен
+
+    public Steroids (String name, String manufacturer, String country_manufacturer, double price, String format, String count, String type, String describe) {
         this.setName(name);
         this.setManufacturer(manufacturer);
         this.setCountry_manufacturer(country_manufacturer);
         this.setPrice(price);
+        this.setFormat(format);
+        this.setCount(count);
         this.setType(type);
+        this.setDescribe(describe);
     }
 }

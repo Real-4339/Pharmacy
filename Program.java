@@ -11,12 +11,16 @@ public class Program {
 
         SqlDB sql = new SqlDB();
         ArrayList<User> people = new ArrayList<User>();
-        sql.Output(people);
-        Pharmacist Oleg = new Pharmacist();
+        sql.User_out(people);
+        Pharmacist Dana = new Pharmacist();
 
         for (int i = 0; i < people.size(); i++) {
-            Oleg.Hello(people.get(i));
+            Dana.Hello(people.get(i));
         }
+
+        Storage agg = new Storage();
+        agg.newProducts();
+        Dana.PrintProducts(agg);
 
     }
 }

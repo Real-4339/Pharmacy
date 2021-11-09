@@ -9,6 +9,7 @@ abstract public class Product {
      private double price;
      private String format;
      private String count;
+     private String describe;
 
      public String getName(){return name;}
      public String getManufacturer(){return manufacturer;}
@@ -16,6 +17,7 @@ abstract public class Product {
      public double getPrice(){return price;}
      public String getFormat(){return format;}
      public String getCount(){return count;}
+     public String getDescribe(){return describe;}
 
      public void setName(String Name){ name = Name;}
      public void setManufacturer(String Manufacturer){ manufacturer = Manufacturer;}
@@ -23,6 +25,7 @@ abstract public class Product {
      public void setPrice(double Price){ price = Price;}
      public void setFormat(String Format){ format = Format;}
      public void setCount(String Count){ count = Count;}
+     public void setDescribe(String Describe){ describe = Describe;}
 
      public double GetDiscount(@NotNull User user){
           if (user.getSpent() < 300)

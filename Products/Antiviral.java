@@ -9,8 +9,9 @@ public class Antiviral extends Product {
     public String getForm(){return form;}
     private void setForm(String Form){ form = Form;}
 
-    public Antiviral (String name, String manufacturer, String country_manufacturer, double price, String format, String count, String form) {
-        super(); // я не понимаю, зачем он тут нужен
+
+    public Antiviral (String name, String manufacturer, String country_manufacturer, double price, String format, String count, String form, String describe) {
+
         this.setName(name);
         this.setManufacturer(manufacturer);
         this.setCountry_manufacturer(country_manufacturer);
@@ -18,5 +19,6 @@ public class Antiviral extends Product {
         this.setFormat(format);
         this.setCount(count);
         this.setForm(form);
+        this.setDescribe(describe);
     }
 }

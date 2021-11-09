@@ -4,17 +4,21 @@ import fiit.Lekaren.Product;
 
 public class PainKillers extends Product {
 
-     private boolean drug;
+     private String drug;
 
-     public boolean isDrug() {return drug;}
-     public void setDrug(boolean Drug){ drug = Drug;}
+     public String getDrug() {return drug;}
+     public void setDrug(String Drug){ drug = Drug;}
 
-     public PainKillers (String name, String manufacturer, String country_manufacturer, double price, boolean drug) {
-          super(); // я не понимаю, зачем он тут нужен
+
+     public PainKillers (String name, String manufacturer, String country_manufacturer, double price, String format, String count, String drug, String describe) {
+
           this.setName(name);
           this.setManufacturer(manufacturer);
           this.setCountry_manufacturer(country_manufacturer);
           this.setPrice(price);
+          this.setFormat(format);
+          this.setCount(count);
           this.setDrug(drug);
+          this.setDescribe(describe);
      }
 }
