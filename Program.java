@@ -10,17 +10,22 @@ public class Program {
     public static void main (String[] args) throws SQLException {
 
         SqlDB sql = new SqlDB();
+        Pharmacist Dana = new Pharmacist();
+
+        Storage polka = new Storage();
+        polka.newProducts();
+
         ArrayList<User> people = new ArrayList<User>();
         sql.User_out(people);
-        Pharmacist Dana = new Pharmacist();
+
 
         for (int i = 0; i < people.size(); i++) {
             Dana.Hello(people.get(i));
         }
 
-        Storage agg = new Storage();
-        agg.newProducts();
-        Dana.PrintProducts(agg);
+
+        int idCount = Dana.PrintProducts(polka);
+        Dana.Scan(people.get(0), polka, idCount);
 
     }
 }
