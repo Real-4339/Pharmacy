@@ -22,7 +22,8 @@ class Pharmacist extends Storage {
         return a;
     }
 
-    public void Scan(User user, Storage pro, int a){
+    public boolean Scan(User user, Storage pro, int a){
+        System.out.println("1)I changed the mind, i want to leave\t2).............");
         System.out.println("\nChoose one of the product and write the following ID: ");
         Scanner input = new Scanner(System.in);
         String str = input.nextLine();
@@ -32,7 +33,7 @@ class Pharmacist extends Storage {
         }
         catch (NumberFormatException e){
             System.out.println("Put only numbers\n");
-            return;
+            return false;
         }
         int count = pro.getProducts().get(0).size();
         if(id >= 0 && id < a){
@@ -43,21 +44,20 @@ class Pharmacist extends Storage {
                     if(pro.getProducts().get(i-1).get(count).getPrice() < user.getBalance())
                     {
                         Notification(user, pro.getProducts().get(i-1).get(count));
+                        return true;
                     }
                     else{
                         System.out.println("You dont have money for that");
+                        return false;
                     }
-                    break;
                 }
                 if (count < id) {
                     count = pro.getProducts().get(i).size() + count;
                 }
             }
         }
-        else{
-            System.out.println("We dont have such product");
-        }
-
+        System.out.println("We dont have such product");
+        return false;
     }
 
     public void Notification(User user, Product product){
@@ -66,15 +66,5 @@ class Pharmacist extends Storage {
       System.out.printf("%s bought %s for %.2f. The order was sent to the warehouse. \n", user.getName(),
               product.getName(), price);
         System.out.println(user.getBalance());
-        /*System.out.println("Do you want to buy more?");
-        Scanner input = new Scanner(System.in);
-        String str = input.nextLine();
-        if(str == "Yes" || str == "No" || str == "yes" || str == "no")
-        {
-            Scan(user, );
-        }
-        else {
-            System.out.println("No such answer\n");
-        }*/
     }
 }
