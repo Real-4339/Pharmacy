@@ -1,11 +1,9 @@
 package fiit.Lekaren;
 
-import fiit.Lekaren.Products.*;
 import fiit.Lekaren.database.SqlDB;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Storage {
 

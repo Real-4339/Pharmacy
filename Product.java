@@ -28,16 +28,16 @@ abstract public class Product {
      public void setDescribe(String Describe){ describe = Describe;}
 
      public double GetDiscount(@NotNull User user){
-          if (user.getSpent() < 300)
+          if (user.getSpent() < 80)
           {
                return this.getPrice();
           }
 
-          if (user.getSpent() < 700)
+          if (user.getSpent() < 150)
           {
-               return this.getPrice() * 0.34;
+               return this.getPrice() * 0.14;
           }
 
-          return this.getPrice() * 0.5;
+          return this.getPrice() * 0.3;
      }
 }
