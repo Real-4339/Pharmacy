@@ -8,7 +8,6 @@ import java.lang.instrument.Instrumentation;
 import java.sql.*;
 import java.io.File;
 import java.util.ArrayList;
-import java.util.List;
 
 public class SqlDB {
     Connection connection;
@@ -70,27 +69,27 @@ public class SqlDB {
                 if(i == 0) {
                     antibiotics.add(new Antibiotics(res.getString("name"), res.getString("manufacturer"), res.getString("country_manufacturer"),
                             res.getDouble("price"), res.getString("format"),
-                            res.getString("count"), res.getString("class"), res.getString("describe")));
+                            res.getString("count"), res.getString("class"), res.getString("describe"), (int) ((Math.random() * (10 - 1)) + 1)));
                 }
                 if(i == 1){
                     antivirals.add(new Antiviral(res.getString("name"), res.getString("manufacturer"), res.getString("country_manufacturer"),
                             res.getDouble("price"), res.getString("format"),
-                            res.getString("count"),  res.getString("form"), res.getString("describe")));
+                            res.getString("count"),  res.getString("form"), res.getString("describe"), (int) ((Math.random() * (10 - 1)) + 1)));
                 }
                 if(i == 2){
                     painKillers.add(new PainKillers(res.getString("name"), res.getString("manufacturer"), res.getString("country_manufacturer"),
                             res.getDouble("price"), res.getString("format"),
-                            res.getString("count"),  res.getString("drug"), res.getString("describe")));
+                            res.getString("count"),  res.getString("drug"), res.getString("describe"), (int) ((Math.random() * (10 - 1)) + 1)));
                 }
                 if(i == 3){
                     steroids.add(new Steroids(res.getString("name"), res.getString("manufacturer"), res.getString("country_manufacturer"),
                             res.getDouble("price"), res.getString("format"),
-                            res.getString("count"),  res.getString("type"), res.getString("describe")));
+                            res.getString("count"),  res.getString("type"), res.getString("describe"), (int) ((Math.random() * (10 - 1)) + 1)));
                 }
                 if(i == 4){
                     vitamins.add(new Vitamins(res.getString("name"), res.getString("manufacturer"), res.getString("country_manufacturer"),
                             res.getDouble("price"), res.getString("format"),
-                            res.getString("count"),  res.getString("groop"), res.getString("describe")));
+                            res.getString("count"),  res.getString("groop"), res.getString("describe"), (int) ((Math.random() * (10 - 1)) + 1)));
                 }
             }
         }

@@ -1,5 +1,6 @@
 package fiit.Lekaren;
 
+import fiit.Lekaren.Products.Colours;
 import fiit.Lekaren.database.SqlDB;
 
 import java.sql.SQLException;
@@ -12,6 +13,7 @@ public class Program {
 
         SqlDB sql = new SqlDB();
         Pharmacist Dana = new Pharmacist();
+        Colours colours = new Colours();
 
         Storage polka = new Storage();
         polka.newProducts();
@@ -24,19 +26,24 @@ public class Program {
 
       while(true) {
           for (int i = 0; i < people.size(); i++) {
-              Dana.Hello(people.get(i));
+              Dana.Hello(people.get(i), colours);
               boolean next = false;
                   while(!next){
                       System.out.println("\n1)I want to buy a certain product\t2)Can you show me all your products\t  3)Could you advise me?\t" +
-                              "\n4)I need to look in my wallet, to get know how much money do i have.\t 5)You know, i would go..Bye ) \t 6) How much did i already spent? \nJust put the number...");
+                              "\n4)I need to look in my wallet, to get know how much money do i have.\t 5)You know, i would go..Bye )" +
+                              " \t 6) How much did i already spent? \nJust put the number...");
                       str = input.nextLine();
                       switch (str){
                           case "1":
-                              System.out.println("\nOf course, what do you want?");
-
+                              //System.out.println("\nOf course, what do you want?");
+                              System.out.println("\nTemporally in development");
                               break;
                           case "2":
                               int idCount = Dana.PrintProducts(polka);
+                              if (is == 2){
+                                  is = 1;
+                                  break;
+                              }
                               while(is == 0) {
                                   is = Dana.Scan(people.get(i), polka, idCount);
                                   if(people.get(i).getSpent() == 0) System.out.println("You have to buy something...Try again :)");
@@ -57,13 +64,14 @@ public class Program {
                               }
                               break;
                           case "3":
-
+                              System.out.println("\nTemporally in development.");
                               break;
                           case "4":
                               System.out.printf("My balance is: %.2f$\n", people.get(i).getBalance());
                               break;
                           case "5":
                               if(people.get(i).getSpent() > 0){
+
                                   System.out.println("Have a good day :)");
                                   next = true;
                                   break;

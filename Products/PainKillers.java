@@ -1,6 +1,8 @@
 package fiit.Lekaren.Products;
 
 import fiit.Lekaren.Product;
+import fiit.Lekaren.User;
+import org.jetbrains.annotations.NotNull;
 
 public class PainKillers extends Product {
 
@@ -10,7 +12,7 @@ public class PainKillers extends Product {
      public void setDrug(String Drug){ drug = Drug;}
 
 
-     public PainKillers (String name, String manufacturer, String country_manufacturer, double price, String format, String count, String drug, String describe) {
+     public PainKillers (String name, String manufacturer, String country_manufacturer, double price, String format, String count, String drug, String describe, int number) {
 
           this.setName(name);
           this.setManufacturer(manufacturer);
@@ -20,5 +22,6 @@ public class PainKillers extends Product {
           this.setCount(count);
           this.setDrug(drug);
           this.setDescribe(describe);
+          this.setNumber(number);
      }
 }

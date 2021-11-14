@@ -10,7 +10,7 @@ public class Antiviral extends Product {
     private void setForm(String Form){ form = Form;}
 
 
-    public Antiviral (String name, String manufacturer, String country_manufacturer, double price, String format, String count, String form, String describe) {
+    public Antiviral (String name, String manufacturer, String country_manufacturer, double price, String format, String count, String form, String describe, int number) {
 
         this.setName(name);
         this.setManufacturer(manufacturer);
@@ -20,5 +20,6 @@ public class Antiviral extends Product {
         this.setCount(count);
         this.setForm(form);
         this.setDescribe(describe);
+        this.setNumber(number);
     }
 }
