@@ -1,17 +1,13 @@
 package fiit.Lekaren;
 
-import fiit.Lekaren.Products.Colours;
+import fiit.Lekaren.Colours.Colours;
 
 import java.util.Scanner;
-import java.util.SortedMap;
 
 class Pharmacist {
 
-    Colours col;
-
-    public void Hello(User user, Colours colours){
-        this.col = colours;
-        System.out.printf("Welcome" + col.ANSI_RED + " %s" + col.ANSI_RESET + ", your balance is" + col.ANSI_BLUE + " %.2f$" + col.ANSI_RESET +
+    public void Hello(User user){
+        System.out.printf("Welcome" + Program.colours.getANSI_RED() + " %s" + Program.colours.getAnsiReset() + ", your balance is" + Program.colours.getANSI_BLUE() + " %.2f$" + Program.colours.getAnsiReset() +
                 ". How can i help you?\n", user.getName(), user.getBalance());
     }
 
@@ -20,9 +16,9 @@ class Pharmacist {
         System.out.println("\nOur products:\n___________________________________");
         String[] arr = {"Antibiotics", "Antiviral", "PainKillers", "Steroids", "Vitamins"};
         for (int i = 0; i < pro.getProducts().size(); i++) {
-            System.out.println("\nIn class " + col.ANSI_CYAN + arr[i] + col.ANSI_RESET + ", we have products: ");
+            System.out.println("\nIn class " + Program.colours.getANSI_CYAN() + arr[i] + Program.colours.getAnsiReset() + ", we have products: ");
             for(int y = 0; y < pro.getProducts().get(i).size(); y++){
-                System.out.printf("Product "+ col.ANSI_GREEN +"id:%d"+ col.ANSI_RESET +"\n -"+col.ANSI_YELLOW + "%s"+ col.ANSI_RESET+", for "+ col.ANSI_BLUE + "%.2f$" + col.ANSI_RESET +"\nIn amount: %d\n", a, pro.getProducts().get(i).get(y).getName(),
+                System.out.printf("Product "+ Program.colours.getANSI_GREEN() +"id:%d"+ Program.colours.getAnsiReset() +"\n -"+ Program.colours.getANSI_YELLOW() + "%s"+ Program.colours.getAnsiReset()+", for "+ Program.colours.getANSI_BLUE() + "%.2f$" + Program.colours.getAnsiReset() +"\nIn amount: %d\n", a, pro.getProducts().get(i).get(y).getName(),
                         pro.getProducts().get(i).get(y).getPrice(), pro.getProducts().get(i).get(y).getNumber());
                 a++;
             }
@@ -98,12 +94,12 @@ class Pharmacist {
     public void Notification(User user, Product product, int amount, Storage polka, int i){
       double price = product.GetDiscount(user) * amount;
       if(product.getPrice() * amount != price) {
-          System.out.printf("You got discount on your purchases, new price: "+col.ANSI_BLUE + "%.2f$\n" + col.ANSI_RESET, product.getPrice() - product.GetDiscount(user));
+          System.out.printf("You got discount on your purchases, new price: "+ Program.colours.getANSI_BLUE() + "%.2f$\n" + Program.colours.getAnsiReset(), product.getPrice() - product.GetDiscount(user));
           price = (product.getPrice() - product.GetDiscount(user)) * amount;
       }
       user.MinimizeBalance(price);
       polka.MinimizeAmount(product,amount, i);
-      System.out.printf(col.ANSI_RED + "%s" + col.ANSI_RESET + " bought %d "+col.ANSI_YELLOW + "%s"+ col.ANSI_RESET+" for "+col.ANSI_BLUE + "%.2f$" + col.ANSI_RESET+". The order was sent to the warehouse. \n", user.getName(), amount,
+      System.out.printf(Program.colours.getANSI_RED() + "%s" + Program.colours.getAnsiReset() + " bought %d " + Program.colours.getANSI_YELLOW() + "%s"+ Program.colours.getAnsiReset() + " for " + Program.colours.getANSI_BLUE() + "%.2f$" + Program.colours.getAnsiReset() + ". The order was sent to the warehouse. \n", user.getName(), amount,
               product.getName(), price);
     }
 }

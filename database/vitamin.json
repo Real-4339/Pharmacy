@@ -1,0 +1,965 @@
+{
+    "type": "database",
+    "name": "SQL",
+    "objects": [
+        {
+            "type": "table",
+            "database": null,
+            "name": "Antibiotics",
+            "withoutRowId": true,
+            "ddl": "CREATE TABLE Antibiotics (id INTEGER PRIMARY KEY NOT NULL, name VARCHAR (35) NOT NULL, manufacturer VARCHAR (45) NOT NULL, country_manufacturer VARCHAR (35) NOT NULL, price DOUBLE NOT NULL, format VARCHAR (35), count VARCHAR (35), class VARCHAR (35) NOT NULL, describe VARCHAR (150))",
+            "columns": [
+                {
+                    "name": "id",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY "
+                        },
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "name",
+                    "type": "VARCHAR",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "manufacturer",
+                    "type": "VARCHAR",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "country_manufacturer",
+                    "type": "VARCHAR",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "price",
+                    "type": "DOUBLE",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "format",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "count",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "class",
+                    "type": "VARCHAR",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "describe",
+                    "type": "VARCHAR"
+                }
+            ],
+            "rows": [
+                [
+                    1,
+                    "Penicilin",
+                    "Secom",
+                    "RO",
+                    4.99,
+                    "Powder",
+                    "30 mg",
+                    "Natural",
+                    "An antibiotic drug obtained from molds especially of the genus Penicillium or produced synthetically, used to treat infections caused by gram-positive bacteria."
+                ],
+                [
+                    2,
+                    "Linkomicin",
+                    "Secom",
+                    "RO",
+                    3.5,
+                    "Capsules",
+                    "30",
+                    "Semi-synthetic",
+                    "An antibiotic that is used to treat severe bacterial infections in people who cannot use penicillin antibiotics.\n\nLincomycin is used only for a severe infection. Lincomycin will not treat a viral infection such as the common cold or flu."
+                ],
+                [
+                    3,
+                    "Doksiciklin",
+                    "Dr.Max",
+                    "PL",
+                    3.1,
+                    "Capsules",
+                    "10",
+                    "Semi-synthetic",
+                    "It is used to treat bacterial pneumonia, acne, chlamydia infections, Lyme disease, cholera, typhus, and syphilis. It is also used to prevent malaria in combination with quinine."
+                ],
+                [
+                    4,
+                    "Ceftriakson",
+                    "Dr.Max",
+                    "CZ",
+                    8.3,
+                    "Powder",
+                    "10 mg",
+                    "Synthetic",
+                    "Antibiotic that is used to treat many kinds of bacterial infections, including severe or life-threatening forms such as E. coli, pneumonia, or meningitis. Ceftriaxone is also used to prevent infection in people having certain types of surgery."
+                ],
+                [
+                    5,
+                    "Azitromicin",
+                    "Dr.Max",
+                    "SK",
+                    3.99,
+                    "Capsules",
+                    "3",
+                    "Synthetic",
+                    "Azithromycin is used to treat many different types of infections caused by bacteria, such as respiratory infections, skin infections, ear infections, eye infections, and sexually transmitted diseases."
+                ],
+                [
+                    6,
+                    "Azitromicin",
+                    "Medicover",
+                    "PL",
+                    7,
+                    "Suspension",
+                    "5 ml",
+                    "Synthetic",
+                    "Azithromycin is used to treat many different types of infections caused by bacteria, such as respiratory infections, skin infections, ear infections, eye infections, and sexually transmitted diseases."
+                ]
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "Antiviral",
+            "withoutRowId": true,
+            "ddl": "CREATE TABLE Antiviral (id INTEGER PRIMARY KEY NOT NULL, name VARCHAR (35) NOT NULL, manufacturer VARCHAR (45) NOT NULL, country_manufacturer VARCHAR (35) NOT NULL, price DOUBLE NOT NULL, format VARCHAR (35), count VARCHAR (35), form VARCHAR (35) NOT NULL, describe VARCHAR (150))",
+            "columns": [
+                {
+                    "name": "id",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY "
+                        },
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "name",
+                    "type": "VARCHAR",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "manufacturer",
+                    "type": "VARCHAR",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "country_manufacturer",
+                    "type": "VARCHAR",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "price",
+                    "type": "DOUBLE",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "format",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "count",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "form",
+                    "type": "VARCHAR",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "describe",
+                    "type": "VARCHAR"
+                }
+            ],
+            "rows": [
+                [
+                    1,
+                    "Arbidol",
+                    "Dr.Max",
+                    "CZ",
+                    5,
+                    "Capsules",
+                    "20",
+                    "Immunostimulant",
+                    "An antiviral drug against influenza."
+                ],
+                [
+                    2,
+                    "Arbidol",
+                    "Dr.Max",
+                    "SK",
+                    9.99,
+                    "Suspension",
+                    "100 ml",
+                    "Immunostimulant",
+                    "An antiviral drug against influenza."
+                ],
+                [
+                    3,
+                    "Amiksin",
+                    "BenuLekaren",
+                    "SK",
+                    6.74,
+                    "Capsules",
+                    "3",
+                    "Immunostimulant",
+                    "It affects all interferons (alpha, beta and gamma), which means it can eliminate almost all viral infections."
+                ],
+                [
+                    4,
+                    "Amiksin",
+                    "BenuLekaren",
+                    "SK",
+                    11.2,
+                    "Capsules",
+                    "10",
+                    "Immunostimulant",
+                    "It affects all interferons (alpha, beta and gamma), which means it can eliminate almost all viral infections."
+                ],
+                [
+                    5,
+                    "Atazanavir",
+                    "Medicover",
+                    "PL",
+                    16.2,
+                    "Capsules",
+                    "30",
+                    "Inhibitor",
+                    "An anti-retroviral drug of the protease inhibitor class that is used in to treat HIV infected patients."
+                ],
+                [
+                    6,
+                    "Lopinavir",
+                    "Doz.pl",
+                    "PL",
+                    78.98,
+                    "Capsules",
+                    "120",
+                    "Inhibitor",
+                    "An anti-retroviral drug of the protease inhibitor class that is used in to treat HIV infected patients."
+                ],
+                [
+                    7,
+                    "Proteflazid",
+                    "Secom",
+                    "RO",
+                    23.5,
+                    "Drops",
+                    "30 ml",
+                    "Immunostimulant",
+                    "Have high price due to its property of blocking viral RNA and DNA polymerases"
+                ]
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "PainKillers",
+            "withoutRowId": true,
+            "ddl": "CREATE TABLE PainKillers (id INTEGER PRIMARY KEY NOT NULL, name VARCHAR (35) NOT NULL, manufacturer VARCHAR (45) NOT NULL, country_manufacturer VARCHAR (35) NOT NULL, price DOUBLE NOT NULL, format VARCHAR (35), count VARCHAR (35), drug VARCHAR (35) NOT NULL, describe VARCHAR (150))",
+            "columns": [
+                {
+                    "name": "id",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY "
+                        },
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "name",
+                    "type": "VARCHAR",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "manufacturer",
+                    "type": "VARCHAR",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "country_manufacturer",
+                    "type": "VARCHAR",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "price",
+                    "type": "DOUBLE",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "format",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "count",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "drug",
+                    "type": "VARCHAR",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "describe",
+                    "type": "VARCHAR"
+                }
+            ],
+            "rows": [
+                [
+                    1,
+                    "Paracetamol",
+                    "Lekarna.cz",
+                    "CZ",
+                    1.45,
+                    "Capsules",
+                    "24",
+                    "Non-narcotic",
+                    "Paracetamol is a pain reliever and a fever reducer. Used to treat many conditions such as headache, muscle aches, arthritis, backache, toothaches, colds, and fevers."
+                ],
+                [
+                    2,
+                    "Panadol",
+                    "Lekarna.cz",
+                    "CZ",
+                    8.49,
+                    "Capsules",
+                    "24",
+                    "Non-narcotic",
+                    "Is used to treat Fever, Muscle Pain, Pain and Sciatica."
+                ],
+                [
+                    3,
+                    "Paralen",
+                    "eTabletka",
+                    "SK",
+                    3.67,
+                    "Hot_drink",
+                    "500 mg",
+                    "Non-narcotic",
+                    "It helps at temperature, especially in acute bacterial and viral infections. And headaches, muscles. It reduces swelling of the nose and dampens dry, irritating cough."
+                ],
+                [
+                    4,
+                    "Solpadeine",
+                    "eTabletka",
+                    "SK",
+                    3.12,
+                    "Capsules",
+                    "12",
+                    "Non-narcotic",
+                    "Solpadeine is indicated in the management of symptoms of headache, including migraine, toothache, backache, common cold, influenza, menstrual pain, musculoskeletal pain.Moderate pain which is not relieved by paracetamol or ibuprofen alone."
+                ],
+                [
+                    5,
+                    "Vicodin",
+                    "Dr.Max",
+                    "PL",
+                    48,
+                    "Capsules",
+                    "30",
+                    "Narcotic",
+                    "Vicodin tablets are used for the relief of moderate to moderately severe pain, narcotic"
+                ],
+                [
+                    6,
+                    "Metadon",
+                    "Dr.Max",
+                    "SK",
+                    76.99,
+                    "Capsules",
+                    "100",
+                    "Narcotic",
+                    "Methadone: A synthetic opiate. The most common medical use for methadone is as a legal substitute for heroin in treatment programs for drug addiction."
+                ],
+                [
+                    7,
+                    "Morfin",
+                    "Medicover",
+                    "PL",
+                    2.3,
+                    "Injection",
+                    "1 ml",
+                    "Narcotic",
+                    "An alkaloid narcotic drug extracted from opium; a powerful, habit-forming narcotic used to relieve pain"
+                ],
+                [
+                    8,
+                    "Morfin",
+                    "Medicover",
+                    "PL",
+                    4,
+                    "Capsules",
+                    "30 mg",
+                    "Narcotic",
+                    "An alkaloid narcotic drug extracted from opium; a powerful, habit-forming narcotic used to relieve pain"
+                ]
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "Steroids",
+            "withoutRowId": true,
+            "ddl": "CREATE TABLE Steroids (id INTEGER PRIMARY KEY NOT NULL, name VARCHAR (35) NOT NULL, manufacturer VARCHAR (45) NOT NULL, country_manufacturer VARCHAR (35) NOT NULL, price DOUBLE NOT NULL, format VARCHAR (35), count VARCHAR (35), type VARCHAR (35) NOT NULL, describe VARCHAR (150))",
+            "columns": [
+                {
+                    "name": "id",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY "
+                        },
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "name",
+                    "type": "VARCHAR",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "manufacturer",
+                    "type": "VARCHAR",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "country_manufacturer",
+                    "type": "VARCHAR",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "price",
+                    "type": "DOUBLE",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "format",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "count",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "type",
+                    "type": "VARCHAR",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "describe",
+                    "type": "VARCHAR"
+                }
+            ],
+            "rows": [
+                [
+                    1,
+                    "Hydrocortisone",
+                    "Medicover",
+                    "PL",
+                    1.39,
+                    "Ointment",
+                    "10 g",
+                    "Natural",
+                    "Is a steroid medicine that is used in the treatment of many different conditions, including allergic disorders, skin conditions, ulcerative colitis, arthritis, lupus, multiple sclerosis, or lung disorders."
+                ],
+                [
+                    2,
+                    "Cortisone",
+                    "Doz.pl",
+                    "PL",
+                    2.19,
+                    "Capsules",
+                    "10",
+                    "Natural",
+                    "Cortisone is a pregnane steroid hormone. It is a naturally-occurring corticosteroid metabolite that is also used as a pharmaceutical prodrug;"
+                ],
+                [
+                    3,
+                    "Dexamethasone",
+                    "Doz.pl",
+                    "PL",
+                    10,
+                    "Injection",
+                    "1 ml",
+                    "Synthetic",
+                    "Dexamethasone is a corticosteroid that is widely used for the treatment of several diseases and infections including Rheumatic disease, skin infections, hypersensitivity reactions, types of cancer, eye infections, ulcerative colitis, Chronic Obstructive Pulmonary Disorder"
+                ],
+                [
+                    4,
+                    "Dexamethasone",
+                    "Dr.Max",
+                    "SK",
+                    1.5,
+                    "Capsules",
+                    "10",
+                    "Synthetic",
+                    "Dexamethasone is a corticosteroid that is widely used for the treatment of several diseases and infections including Rheumatic disease, skin infections, hypersensitivity reactions, types of cancer, eye infections, ulcerative colitis, Chronic Obstructive Pulmonary Disorder"
+                ],
+                [
+                    5,
+                    "Fluconazole ",
+                    "Dr.Max",
+                    "CZ",
+                    3.11,
+                    "Capsules",
+                    "10",
+                    "Synthetic",
+                    "An antifungal drug used especially against Candida"
+                ],
+                [
+                    6,
+                    "Prednisolone",
+                    "Dr.Max",
+                    "CZ",
+                    3,
+                    "Capsules",
+                    "40",
+                    "Synthetic",
+                    "Prednisolone is a steroid that prevents the release of substances in the body that cause inflammation.Used to treat many different inflammatory conditions such as arthritis, lupus, psoriasis, ulcerative colitis, allergic disorders"
+                ],
+                [
+                    7,
+                    "Prednisolone",
+                    "Dr.Max",
+                    "CZ",
+                    2.5,
+                    "Oitment",
+                    "10 g",
+                    "Synthetic",
+                    "Prednisolone is a steroid that prevents the release of substances in the body that cause inflammation.Used to treat many different inflammatory conditions such as arthritis, lupus, psoriasis, ulcerative colitis, allergic disorders"
+                ],
+                [
+                    8,
+                    "Prednisolone",
+                    "Dr.Max",
+                    "CZ",
+                    2.5,
+                    "Injection",
+                    "5",
+                    "Synthetic",
+                    "Prednisolone is a steroid that prevents the release of substances in the body that cause inflammation.Used to treat many different inflammatory conditions such as arthritis, lupus, psoriasis, ulcerative colitis, allergic disorders"
+                ]
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "Users",
+            "withoutRowId": true,
+            "ddl": "CREATE TABLE Users (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, name VARCHAR (30) NOT NULL, adress VARCHAR (45) NOT NULL, balance DOUBLE NOT NULL, spent DOUBLE NOT NULL)",
+            "columns": [
+                {
+                    "name": "id",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL "
+                        },
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY AUTOINCREMENT"
+                        }
+                    ]
+                },
+                {
+                    "name": "name",
+                    "type": "VARCHAR",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "adress",
+                    "type": "VARCHAR",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "balance",
+                    "type": "DOUBLE",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "spent",
+                    "type": "DOUBLE",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                }
+            ],
+            "rows": [
+                [
+                    1,
+                    "Vadym",
+                    "Mlada Garda",
+                    300,
+                    0
+                ],
+                [
+                    2,
+                    "Goga",
+                    "Gen.Petrova",
+                    193,
+                    0
+                ]
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "Vitamins",
+            "withoutRowId": true,
+            "ddl": "CREATE TABLE Vitamins (id INTEGER PRIMARY KEY NOT NULL, name VARCHAR (35) NOT NULL, manufacturer VARCHAR (45) NOT NULL, country_manufacturer VARCHAR (35) NOT NULL, price DOUBLE NOT NULL, format VARCHAR (35), count VARCHAR (35), groop VARCHAR (35), describe VARCHAR (150))",
+            "columns": [
+                {
+                    "name": "id",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY "
+                        },
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "name",
+                    "type": "VARCHAR",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "manufacturer",
+                    "type": "VARCHAR",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "country_manufacturer",
+                    "type": "VARCHAR",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "price",
+                    "type": "DOUBLE",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "format",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "count",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "groop",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "describe",
+                    "type": "VARCHAR"
+                }
+            ],
+            "rows": [
+                [
+                    1,
+                    "Carotene",
+                    "Dr.Max",
+                    "SK",
+                    15,
+                    "Capsules",
+                    "35",
+                    "A",
+                    "Essential for vision Lycopene may lower prostate cancer risk. Keeps tissues and skin healthy.Good for bone growth"
+                ],
+                [
+                    2,
+                    "Thiamin",
+                    "BenuLekaren",
+                    "SK",
+                    27.53,
+                    "Injection",
+                    "10",
+                    "B1",
+                    "Helps convert food into energy. Needed for healthy skin, hair, muscles, and brain and is critical for nerve function."
+                ],
+                [
+                    3,
+                    "Riboflavin",
+                    "Doz.pl",
+                    "PL",
+                    21.99,
+                    "Capsules",
+                    "50",
+                    "B2",
+                    "Helps convert food into energy.Needed for healthy skin, hair, blood, and brain"
+                ],
+                [
+                    4,
+                    "Niacin",
+                    "Doz.pl",
+                    "PL",
+                    23.99,
+                    "Capsules",
+                    "70",
+                    "B3",
+                    "Helps convert food into energy.Essential for healthy skin, blood cells, brain, and nervous system"
+                ],
+                [
+                    5,
+                    "Pantothnic Acid",
+                    "Doz.pl",
+                    "PL",
+                    31.5,
+                    "Capsules",
+                    "120",
+                    "B5",
+                    "Helps convert food into energy. Helps make lipids(fats), neurotransmitters, steroid hormones, and hemoglobin"
+                ],
+                [
+                    6,
+                    "Pyridoxine",
+                    "Medicover",
+                    "PL",
+                    45,
+                    "Injection",
+                    "10",
+                    "B6",
+                    "Aids in lowering homocysteine levels and may reduce the risk of heart disease.Helps convert tryptophan to niacin and serotonin"
+                ],
+                [
+                    7,
+                    "Cobalamin",
+                    "Lekarna.cz",
+                    "CZ",
+                    39.9,
+                    "Injection",
+                    "100 ml",
+                    "B12",
+                    "Protects nerve cells and encourages their normal growth.Helps make red blood cells and DNA"
+                ],
+                [
+                    8,
+                    "Ascorbic Acid",
+                    "Lekarna.cz",
+                    "CZ",
+                    19.9,
+                    "Capsules",
+                    "60",
+                    "C",
+                    "Vitamin C may lower the risk for some cancers.Long-term use of supplemental vitamin C may protect against cataracts"
+                ],
+                [
+                    9,
+                    "Calciferol",
+                    "GigaLekarna",
+                    "CZ",
+                    23.3,
+                    "Capsules",
+                    "100",
+                    "D",
+                    "Helps maintain normal blood levels of calcium,which strengthen bones.Helps form teeth and bones."
+                ],
+                [
+                    10,
+                    "Calcium",
+                    "Dr.Max",
+                    "CZ",
+                    23.3,
+                    "Capsules",
+                    "200",
+                    "",
+                    "Builds and protects bones and teeth. Helps with muscle contractions and relaxation"
+                ],
+                [
+                    11,
+                    "Cobalamin",
+                    "Dr.Max",
+                    "CZ",
+                    28.87,
+                    "Spray",
+                    "30 ml",
+                    "B12",
+                    "Protects nerve cells and encourages their normal growth.Helps make red blood cells and DNA"
+                ],
+                [
+                    12,
+                    "Pantothenic Acid",
+                    "Medicover",
+                    "PL",
+                    34.87,
+                    "Capsules",
+                    "130",
+                    "B5",
+                    "Helps convert food into energy. Helps make lipids(fats), neurotransmitters, steroid hormones, and hemoglobin"
+                ]
+            ]
+        }
+    ]
+}

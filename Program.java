@@ -1,6 +1,6 @@
 package fiit.Lekaren;
 
-import fiit.Lekaren.Products.Colours;
+import fiit.Lekaren.Colours.Colours;
 import fiit.Lekaren.database.SqlDB;
 
 import java.sql.SQLException;
@@ -9,11 +9,13 @@ import java.util.Scanner;
 
 public class Program {
 
+    static Colours colours = Colours.getInstance();
+
     public static void main (String[] args) throws SQLException {
 
         SqlDB sql = new SqlDB();
         Pharmacist Dana = new Pharmacist();
-        Colours colours = new Colours();
+
 
         Storage polka = new Storage();
         polka.newProducts();
@@ -26,7 +28,7 @@ public class Program {
 
       while(true) {
           for (int i = 0; i < people.size(); i++) {
-              Dana.Hello(people.get(i), colours);
+              Dana.Hello(people.get(i));
               boolean next = false;
                   while(!next){
                       System.out.println("\n1)I want to buy a certain product\t2)Can you show me all your products\t  3)Could you advise me?\t" +
@@ -40,10 +42,7 @@ public class Program {
                               break;
                           case "2":
                               int idCount = Dana.PrintProducts(polka);
-                              if (is == 2){
-                                  is = 1;
-                                  break;
-                              }
+                              if (is == 2) is = 0;
                               while(is == 0) {
                                   is = Dana.Scan(people.get(i), polka, idCount);
                                   if(people.get(i).getSpent() == 0) System.out.println("You have to buy something...Try again :)");
@@ -67,7 +66,7 @@ public class Program {
                               System.out.println("\nTemporally in development.");
                               break;
                           case "4":
-                              System.out.printf("My balance is: %.2f$\n", people.get(i).getBalance());
+                              System.out.printf("My balance is: "+ colours.getANSI_BLUE() + "%.2f$" + colours.getAnsiReset() +"\n", people.get(i).getBalance());
                               break;
                           case "5":
                               if(people.get(i).getSpent() > 0){
@@ -79,7 +78,7 @@ public class Program {
                               System.out.println("I dont think so, just buy something and I'll make sure THEY let you out.");
                               break;
                           case "6":
-                              System.out.printf("Ive spent: %.2f$\n", people.get(i).getSpent());
+                              System.out.printf("Ive spent: "+ colours.getANSI_BLUE() + "%.2f$" + colours.getAnsiReset() +"\n", people.get(i).getSpent());
                               break;
                           default:
                               System.out.println("\nPut only available 'numbers'. Try again.");
