@@ -37,8 +37,7 @@ public class Program {
                       str = input.nextLine();
                       switch (str){
                           case "1":
-                              //System.out.println("\nOf course, what do you want?");
-                              System.out.println("\nTemporally in development");
+                              Dana.Sertain(people.get(i), polka);
                               break;
                           case "2":
                               int idCount = Dana.PrintProducts(polka);
