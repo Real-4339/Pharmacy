@@ -11,6 +11,8 @@ public class Colours {
          static String ANSI_PURPLE;
          static String ANSI_CYAN;
          static String ANSI_WHITE;
+         static String ANSI_BRIGHT_RED;
+         static String ANSI_BRIGHT_PURPLE;
 
         private static Colours Instance;
 
@@ -31,6 +33,8 @@ public class Colours {
         ANSI_PURPLE = "\u001B[35m";
         ANSI_CYAN = "\u001B[36m";
         ANSI_WHITE = "\u001B[37m";
+        ANSI_BRIGHT_RED = "\u001B[101m";
+        ANSI_BRIGHT_PURPLE = "\u001B[105m";
         }
 
         public String getAnsiReset() {
@@ -44,6 +48,8 @@ public class Colours {
         public String getANSI_RED() {
                 return ANSI_RED;
         }
+
+        public String getAnsiBrightRed() { return ANSI_BRIGHT_RED; }
 
         public String getANSI_GREEN() {
                 return ANSI_GREEN;
@@ -60,6 +66,8 @@ public class Colours {
         public String getANSI_PURPLE() {
                 return ANSI_PURPLE;
         }
+
+        public String getAnsiBrightPurple() { return ANSI_BRIGHT_PURPLE; }
 
         public String getANSI_CYAN() {
                 return ANSI_CYAN;

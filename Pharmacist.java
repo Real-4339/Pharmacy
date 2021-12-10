@@ -19,8 +19,20 @@ class Pharmacist {
         for (int i = 0; i < pro.getProducts().size(); i++) {
             System.out.println("\nIn class " + Program.colours.getANSI_CYAN() + arr[i] + Program.colours.getAnsiReset() + ", we have products: ");
             for(int y = 0; y < pro.getProducts().get(i).size(); y++){
-                System.out.printf("Product "+ Program.colours.getANSI_GREEN() +"id:%d"+ Program.colours.getAnsiReset() +"\n -"+ Program.colours.getANSI_YELLOW() + "%s"+ Program.colours.getAnsiReset()+", for "+ Program.colours.getANSI_BLUE() + "%.2f$" + Program.colours.getAnsiReset() +"\nIn amount: %d\n", a, pro.getProducts().get(i).get(y).getName(),
-                        pro.getProducts().get(i).get(y).getPrice(), pro.getProducts().get(i).get(y).getNumber());
+                System.out.printf("Product "+ Program.colours.getANSI_GREEN() +"id:%d"+ Program.colours.getAnsiReset()
+                                  +"\n -"+ Program.colours.getANSI_YELLOW() + "%s"+ Program.colours.getAnsiReset()
+                                  +", for "+ Program.colours.getANSI_BLUE() + "%.2f$" + Program.colours.getAnsiReset()
+                                  +"\n -"+ "manufacturer: " + Program.colours.getANSI_YELLOW() + "%s"+ Program.colours.getAnsiReset()
+                                  +"\n -"+ "country: " + Program.colours.getANSI_YELLOW() + "%s"+ Program.colours.getAnsiReset()
+                                  +"\n -"+ "format: " + Program.colours.getANSI_YELLOW() + "%s"+ Program.colours.getAnsiReset()
+                                  +"\n -"+ "in dose: " + Program.colours.getANSI_YELLOW() + "%s"+ Program.colours.getAnsiReset()
+                                  +"\nIn amount: %d\n\n", a, pro.getProducts().get(i).get(y).getName(),
+                                                            pro.getProducts().get(i).get(y).getPrice(),
+                                                            pro.getProducts().get(i).get(y).getManufacturer(),
+                                                            pro.getProducts().get(i).get(y).getCountry_manufacturer(),
+                                                            pro.getProducts().get(i).get(y).getFormat(),
+                                                            pro.getProducts().get(i).get(y).getCount(),
+                                                            pro.getProducts().get(i).get(y).getNumber());
                 a++;
             }
         }
@@ -41,7 +53,7 @@ class Pharmacist {
         Scanner input = new Scanner(System.in);
         String str = "";
         while (!str.equals("*")) {
-            System.out.println("\n$)I changed my mind, i want to leave\t*)Continue with buying...");
+            System.out.println("$)I changed my mind, i want to leave\t*)Continue with buying...");
             str = input.nextLine();
             if(str.equals("$")){
                 if(user.getSpent() > 0){
@@ -127,10 +139,10 @@ class Pharmacist {
             System.out.println("Yes, we have that product, but also we have different variations of it.");
             for (int a = 0; a < num.size(); a++) {
                 System.out.println("\n-----------------------------------------------------------------"
-                        + "\n| name: " + pro.getProducts().get(first).get(num.get(a)).getName()
+                        + "\n| name: " + Program.colours.getANSI_YELLOW() + pro.getProducts().get(first).get(num.get(a)).getName() + Program.colours.getAnsiReset()
                         + "\n| manufacturer: " + pro.getProducts().get(first).get(num.get(a)).getManufacturer()
                         + "\n| country: " + pro.getProducts().get(first).get(num.get(a)).getCountry_manufacturer()
-                        + "\n| for: " + pro.getProducts().get(first).get(num.get(a)).getPrice() + "$"
+                        + "\n| for: " + Program.colours.getANSI_BLUE() + pro.getProducts().get(first).get(num.get(a)).getPrice() + "$" + Program.colours.getAnsiReset()
                         + "\n| format: " + pro.getProducts().get(first).get(num.get(a)).getFormat()
                         + "\n| in dose: " + pro.getProducts().get(first).get(num.get(a)).getCount()
                         + "\n| in count: X" + pro.getProducts().get(first).get(num.get(a)).getNumber()
@@ -188,10 +200,10 @@ class Pharmacist {
         }
         if (num.size() == 1) {
             System.out.println("-----------------------------------------------------------------"
-                    + "\n| Yes, we have that product," + pro.getProducts().get(first).get(num.get(0)).getName()
+                    + "\n| name: " + Program.colours.getANSI_YELLOW() + pro.getProducts().get(first).get(num.get(0)).getName() + Program.colours.getAnsiReset()
                     + "\n| manufacturer: " + pro.getProducts().get(first).get(num.get(0)).getManufacturer()
                     + "\n| country: " + pro.getProducts().get(first).get(num.get(0)).getCountry_manufacturer()
-                    + "\n| for: " + pro.getProducts().get(first).get(num.get(0)).getPrice() + "$"
+                    + "\n| for: " + Program.colours.getANSI_BLUE() + pro.getProducts().get(first).get(num.get(0)).getPrice() + "$" + Program.colours.getAnsiReset()
                     + "\n| format: " + pro.getProducts().get(first).get(num.get(0)).getFormat()
                     + "\n| in dose: " + pro.getProducts().get(first).get(num.get(0)).getCount()
                     + "\n| in count: X" + pro.getProducts().get(first).get(num.get(0)).getNumber()
