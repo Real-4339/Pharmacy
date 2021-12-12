@@ -62,7 +62,7 @@ public class Program {
                               }
                               break;
                           case "3":
-                              System.out.println("\nTemporally in development.");
+                              Dana.Advise(people.get(i), polka);
                               break;
                           case "4":
                               System.out.printf("My balance is: "+ colours.getANSI_BLUE() + "%.2f$" + colours.getAnsiReset() +"\n", people.get(i).getBalance());

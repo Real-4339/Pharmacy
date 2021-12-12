@@ -28,4 +28,9 @@ public class Vitamins extends Product {
    @Override public double GetDiscount(@NotNull User user) {
       return this.getPrice() * 0.05;
    }
+
+   @Override
+   public String toString() {
+      return group;
+   }
 }

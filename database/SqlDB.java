@@ -36,7 +36,7 @@ public class SqlDB {
                     "| | /| / /  / _ \\  / /  / ___/ / __ \\  / __ `__ \\ / _ \\\n" +
                     "| |/ |/ /  /  __/ / /  / /__  / /_/ / / / / / / //  __/\n" +
                     "|__/|__/   \\___/ /_/   \\___/  \\____/ /_/ /_/ /_/ \\___/ \n" +
-                    "                                                       \n");
+                    "                                                       ");
         }
         catch (SQLException | ClassNotFoundException exception) {
             exception.printStackTrace();
@@ -99,16 +99,4 @@ public class SqlDB {
         products.add(steroids);
         products.add(vitamins);
     }
-
-    /*public ArrayList<User> Output() throws SQLException {
-        ArrayList<User> guys = new ArrayList<User>();
-        String SQLREQUEST = "Select first_name from Users";
-        ResultSet res = statement.executeQuery(SQLREQUEST);
-        while(res.next()){
-            System.out.println(res.getString("first_name"));
-            //guys.add();
-        }
-        return guys;
-    }*/
-
 }

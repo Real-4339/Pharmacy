@@ -3,12 +3,13 @@ package fiit.Lekaren;
 import fiit.Lekaren.Colours.Colours;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 class Pharmacist {
 
     public void Hello(User user){
-        System.out.printf("Welcome" + Program.colours.getANSI_RED() + " %s" + Program.colours.getAnsiReset() + ", your balance is" + Program.colours.getANSI_BLUE() + " %.2f$" + Program.colours.getAnsiReset() +
+        System.out.printf("\nWelcome" + Program.colours.getANSI_RED() + " %s" + Program.colours.getAnsiReset() + ", your balance is" + Program.colours.getANSI_BLUE() + " %.2f$" + Program.colours.getAnsiReset() +
                 ". How can i help you?\n", user.getName(), user.getBalance());
     }
 
@@ -129,24 +130,29 @@ class Pharmacist {
         str.replaceAll("[\r\n]", "");
         for (int i = 0; i < pro.getProducts().size(); i++){
             for (int y = 0; y < pro.getProducts().get(i).size(); y++){
-                if (str.substring(1, 5).equals(pro.getProducts().get(i).get(y).getName().substring(1, 5))){
-                    num.add(y);
-                    first = i;
+                try {
+                    if (str.substring(1, 5).equals(pro.getProducts().get(i).get(y).getName().substring(1, 5))){
+                        num.add(y);
+                        first = i;
+                    }
+                }catch (StringIndexOutOfBoundsException e) {
+                    System.out.println("Sorry bro, but you wrote non medical name :(");
+                    return;
                 }
             }
         }
         if (num.size() > 1) {
             System.out.println("Yes, we have that product, but also we have different variations of it.");
-            for (int a = 0; a < num.size(); a++) {
+            for (Integer integer : num) {
                 System.out.println("\n-----------------------------------------------------------------"
-                        + "\n| name: " + Program.colours.getANSI_YELLOW() + pro.getProducts().get(first).get(num.get(a)).getName() + Program.colours.getAnsiReset()
-                        + "\n| manufacturer: " + pro.getProducts().get(first).get(num.get(a)).getManufacturer()
-                        + "\n| country: " + pro.getProducts().get(first).get(num.get(a)).getCountry_manufacturer()
-                        + "\n| for: " + Program.colours.getANSI_BLUE() + pro.getProducts().get(first).get(num.get(a)).getPrice() + "$" + Program.colours.getAnsiReset()
-                        + "\n| format: " + pro.getProducts().get(first).get(num.get(a)).getFormat()
-                        + "\n| in dose: " + pro.getProducts().get(first).get(num.get(a)).getCount()
-                        + "\n| in count: X" + pro.getProducts().get(first).get(num.get(a)).getNumber()
-                        + "\n| " + pro.getProducts().get(first).get(num.get(a)).getDescribe()
+                        + "\n| name: " + Program.colours.getANSI_YELLOW() + pro.getProducts().get(first).get(integer).getName() + Program.colours.getAnsiReset()
+                        + "\n| manufacturer: " + pro.getProducts().get(first).get(integer).getManufacturer()
+                        + "\n| country: " + pro.getProducts().get(first).get(integer).getCountry_manufacturer()
+                        + "\n| for: " + Program.colours.getANSI_BLUE() + pro.getProducts().get(first).get(integer).getPrice() + "$" + Program.colours.getAnsiReset()
+                        + "\n| format: " + pro.getProducts().get(first).get(integer).getFormat()
+                        + "\n| in dose: " + pro.getProducts().get(first).get(integer).getCount()
+                        + "\n| in count: X" + pro.getProducts().get(first).get(integer).getNumber()
+                        + "\n| " + pro.getProducts().get(first).get(integer).getDescribe()
                         + "\n---------------------------------------------------------------"
                 );
             }
@@ -189,12 +195,17 @@ class Pharmacist {
             catch (NumberFormatException e){
                 System.out.println("Put only numbers...");
             }
-            if(pro.getProducts().get(first).get(num.get(0)).getPrice()*amount < user.getBalance())
-            {
-                Notification(user, pro.getProducts().get(first).get(num.get(0)), amount, pro, first);
+            if(pro.getProducts().get(first).get(num.get(0)).getNumber() >= amount) {
+                if(pro.getProducts().get(first).get(num.get(0)).getPrice()*amount < user.getBalance())
+                {
+                    Notification(user, pro.getProducts().get(first).get(num.get(0)), amount, pro, first);
+                }
+                else{
+                    System.out.println("You dont have money for that.");
+                }
             }
-            else{
-                System.out.println("You dont have money for that.");
+            else {
+                System.out.println("\nWe dont have that amount of that product");
             }
             return;
         }
@@ -217,16 +228,117 @@ class Pharmacist {
             catch (NumberFormatException e){
                 System.out.println("Put only numbers...");
             }
-            if(pro.getProducts().get(first).get(num.get(0)).getPrice()*amount < user.getBalance())
-            {
-                Notification(user, pro.getProducts().get(first).get(num.get(0)), amount, pro, first);
+            if(pro.getProducts().get(first).get(num.get(0)).getNumber() >= amount){
+                if(pro.getProducts().get(first).get(num.get(0)).getPrice()*amount < user.getBalance())
+                {
+                    Notification(user, pro.getProducts().get(first).get(num.get(0)), amount, pro, first);
+                }
+                else{
+                    System.out.println("You dont have money for that.");
+                }
             }
-            else{
-                System.out.println("You dont have money for that.");
+            else {
+                System.out.println("\nWe dont have that amount of that product");
             }
         }
         else {
             System.out.println("\nWe dont have such product, or it could run out.");
+        }
+    }
+
+    public void Advise(User user, Storage pro) {
+        System.out.println("Yeah, what can i do for you? Are you looking for some group?");
+        String[] arr = {"Antibiotics", "Antiviral", "PainKillers", "Steroids", "Vitamins"};
+        Scanner input = new Scanner(System.in);
+        String str;
+        str = input.nextLine();
+        str.replaceAll("[\r\n]", "");
+        for (String a: arr) {
+            Boolean found = Arrays.asList(str.split(" ")).contains(a);
+            if(found){
+                int index = 0;
+
+                if (a.equals("Antiviral")) {
+                    index = 1;
+                }
+                if (a.equals("PainKillers")) {
+                    index = 2;
+                }
+                if (a.equals("Steroids")) {
+                    index = 3;
+                }
+                if (a.equals("Vitamins")) {
+                    index = 4;
+                }
+
+                if (pro.getProducts().get(index).size() > 1) {
+                    for (int y = 0; y < pro.getProducts().get(index).size(); y++){
+                        if(index == 4)
+                        {
+                            System.out.println("\n-----------------------------------------------------------------"
+                                    + "\n| ID: " + y
+                                    + "\n| name: " + Program.colours.getANSI_YELLOW() + pro.getProducts().get(index).get(y).getName() + Program.colours.getAnsiReset()
+                                    + "\n| manufacturer: " + pro.getProducts().get(index).get(y).getManufacturer()
+                                    + "\n| country: " + pro.getProducts().get(index).get(y).getCountry_manufacturer()
+                                    + "\n| for: " + Program.colours.getANSI_BLUE() + pro.getProducts().get(index).get(y).getPrice() + "$" + Program.colours.getAnsiReset()
+                                    + "\n| format: " + pro.getProducts().get(index).get(y).getFormat()
+                                    + "\n| group: " + pro.getProducts().get(index).get(y).toString()
+                                    + "\n| in dose: " + pro.getProducts().get(index).get(y).getCount()
+                                    + "\n| in count: X" + pro.getProducts().get(index).get(y).getNumber()
+                                    + "\n| " + pro.getProducts().get(index).get(y).getDescribe()
+                                    + "\n---------------------------------------------------------------"
+                            );
+                        }
+                        else {
+                            System.out.println("\n-----------------------------------------------------------------"
+                                    + "\n| ID: " + y
+                                    + "\n| name: " + Program.colours.getANSI_YELLOW() + pro.getProducts().get(index).get(y).getName() + Program.colours.getAnsiReset()
+                                    + "\n| manufacturer: " + pro.getProducts().get(index).get(y).getManufacturer()
+                                    + "\n| country: " + pro.getProducts().get(index).get(y).getCountry_manufacturer()
+                                    + "\n| for: " + Program.colours.getANSI_BLUE() + pro.getProducts().get(index).get(y).getPrice() + "$" + Program.colours.getAnsiReset()
+                                    + "\n| format: " + pro.getProducts().get(index).get(y).getFormat()
+                                    + "\n| in dose: " + pro.getProducts().get(index).get(y).getCount()
+                                    + "\n| in count: X" + pro.getProducts().get(index).get(y).getNumber()
+                                    + "\n| " + pro.getProducts().get(index).get(y).getDescribe()
+                                    + "\n---------------------------------------------------------------"
+                            );
+                        }
+                    }
+                    System.out.println("\nWhich one do you want ? _(Enter id)_");
+                    str = input.nextLine();
+                    int ID = 0;
+                    try {
+                        ID = Integer.valueOf(str);
+                    }
+                    catch (NumberFormatException e){
+                        System.out.println("Put only numbers");
+                        return;
+                    }
+                    int amount = 0;
+                    System.out.println("How much of it do you want ?");
+                    str = input.nextLine();
+                    try {
+                        amount = Integer.valueOf(str);
+                    }
+                    catch (NumberFormatException e){
+                        System.out.println("Put only numbers...");
+                    }
+                    if(pro.getProducts().get(index).get(ID).getNumber() >= amount){
+                        if(pro.getProducts().get(index).get(ID).getPrice()*amount < user.getBalance())
+                        {
+                            Notification(user, pro.getProducts().get(index).get(ID), amount, pro, index);
+                            return;
+                        }
+                        else{
+                            System.out.println("You dont have money for that");
+                            return;
+                        }
+                    }
+                }
+                else {
+                    System.out.println("We have run out of products in this group.");
+                }
+            }
         }
     }
 
