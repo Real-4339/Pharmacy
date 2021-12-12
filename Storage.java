@@ -27,7 +27,11 @@ public class Storage {
     public void MinimizeAmount(Product product, int amount, int i){
         product.setNumber(product.getNumber() - amount);
         if(product.getNumber() == 0){
-            products.get(i).remove(product);
+            products.get(i).remove(product); //upcast
         }
+    }
+
+    public void Ping(){
+        System.out.println("Get down!!");
     }
 }

@@ -11,9 +11,6 @@ public class Antibiotics extends Product implements IBonus {
     public String getClas(){return clas;}
     private void setClas(String Clas){ clas = Clas;}
 
-    public void Free(){
-        System.out.println("\nYou bought Antibiotics product/s, so you get free" + Gematogen);
-    }
 
     public Antibiotics (String name, String manufacturer, String country_manufacturer, double price, String format, String count, String clas, String describe, int number) {
         this.setName(name);
@@ -25,5 +22,8 @@ public class Antibiotics extends Product implements IBonus {
         this.setClas(clas);
         this.setDescribe(describe);
         this.setNumber(number);
+    }
+    public void Free(){
+        System.out.println("\nYou bought Antibiotics product/s, so you get free" + Gematogen + "\nBecause our boss has a birthday today, he is" + absurd);
     }
 }

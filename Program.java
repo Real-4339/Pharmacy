@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Program {
+public class Program{
 
     static Colours colours = Colours.getInstance();
 
@@ -69,7 +69,8 @@ public class Program {
                               break;
                           case "5":
                               if(people.get(i).getSpent() > 0){
-
+                                  Holl holl = new Holl();
+                                  holl.Free();
                                   System.out.println("Have a good day :)");
                                   next = true;
                                   break;
@@ -86,6 +87,7 @@ public class Program {
           }
       }
     }
+
 }
 
 

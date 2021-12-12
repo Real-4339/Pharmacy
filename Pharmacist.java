@@ -1,6 +1,7 @@
 package fiit.Lekaren;
 
 import fiit.Lekaren.Colours.Colours;
+import fiit.Lekaren.Products.Antibiotics;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -353,6 +354,7 @@ class Pharmacist {
         System.out.printf(Program.colours.getANSI_RED() + "%s" + Program.colours.getAnsiReset() + " bought %d " + Program.colours.getANSI_YELLOW() + "%s"+ Program.colours.getAnsiReset() +
                         " for " + Program.colours.getANSI_BLUE() + "%.2f$" + Program.colours.getAnsiReset() + ". The order was sent to the warehouse. \n", user.getName(), amount,
                 product.getName(), price);
+
     }
 
 }

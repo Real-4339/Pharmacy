@@ -10,7 +10,7 @@ abstract public class Product {
      private String format;
      private String count;
      private String describe;
-     private int number;
+     protected int number;
 
      public String getName(){return name;}
      public String getManufacturer(){return manufacturer;}
